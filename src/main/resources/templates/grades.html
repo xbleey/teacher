@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <link rel="icon" href="#" th:href="@{../static/favicon.ico}">
 
-    <title>大数据平台</title>
+    <title>后台管理系统</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
 
@@ -51,8 +51,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- 引入sidebar-->
-        <div th:replace="commons/bar::#sidebar(activeUri='index')"></div>
-
+        <div th:replace="commons/bar::#sidebar(activeUri='grade')"></div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="chartjs-size-monitor"
                  style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
@@ -66,7 +65,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">员工信息</h1>
+                <h1 class="h2">班级信息</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
                         <button class="btn btn-sm btn-outline-secondary">分享</button>
@@ -88,30 +87,43 @@
 
             <!--            <canvas class="my-4 chartjs-render-monitor" id="myChart" width="1524" height="643" style="display: block; width: 1524px; height: 643px;"></canvas>-->
 
-            <form method="post" action="/emp">
-                <input type="hidden" name="_method" value="put" th:if="${user!=null}"/>
-                <input type="hidden" name="userId" th:if="${user!=null}" th:value="${user.userId}"/>
-                <div class="form-group">
-                    <label>用户名</label>
-                    <input type="text" class="form-control" id="user-name-label" placeholder="请输入用户名" name="userName"
-                           th:value="${user!=null}?${user.userName}"/>
-                    <small id="emailHelp" class="form-text text-muted">请勿输入特殊字符。</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">密码</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码"
-                           name="userPass" th:value="${user!=null}?${user.userPass}"/>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">员工等级</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="userLevel">
-                        <option th:each="i:${#numbers.sequence(1,100)}" th:text="${i}" th:value="${i}"
-                                th:selected="${user!=null}?${user.userLevel==i}"></option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">提交</button>
-            </form>
+            <h3><a class="btn btn-sm btn-success" href="/grade" th:href="@{/grade}">班级信息添加</a></h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>班级编号</th>
+                        <th>班级名称</th>
+                        <th>班级人数</th>
+                        <th>开班时间</th>
+                        <th>结课时间</th>
+                        <th>班级类型</th>
+                        <th>操作</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="grade : ${grades}">
+                        <td th:text="${grade.getGradeId()}">GradeId</td>
+                        <td th:text="${grade.getGradeName()}">GradeName</td>
+                        <td th:text="${grade.getGradeNumber()}">GradeNumber</td>
+                        <td th:text="${grade.getGradeOpenTime()}">GradeOpenTime</td>
+                        <td th:text="${grade.getGradeEndTime()}">GradeEndTime</td>
+                        <td th:text="${grade.getGradeType()}">GradeType</td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" th:href="@{/grade/}+${grade.getGradeId()}">修改</a>
+                            <button th:attr="del_url=@{/grade/}+${grade.getGradeId()}" class="btn btn-sm btn-danger deleteBtn">
+                                删除
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
+        <form id="deleteEmpForm" method="post">
+            <input type="hidden" name="_method" value="delete"/>
+        </form>
     </div>
 </div>
 
@@ -134,5 +146,12 @@
 <!-- Graphs -->
 <script src="../files/Chart.min.js"></script>
 
+
+<script>
+    $(".deleteBtn").click(function () {
+        $("#deleteEmpForm").attr("action", $(this).attr("del_url")).submit();
+        return false;
+    });
+</script>
 </body>
 </html>

@@ -33,6 +33,7 @@ public class MyConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/go").setViewName("login");
+        registry.addViewController("/").setViewName("forward:/go");
         registry.addViewController("/index").setViewName("index");
     }
 }

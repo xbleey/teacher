@@ -98,6 +98,25 @@ public class Grade {
                 ", gradeType='" + gradeType + '\'' +
                 '}';
     }
+
+    public String isAllContain(){
+        if(gradeName==null){
+            return "gradeName";
+        }
+        if(gradeNumber==null){
+            return "gradeNumber";
+        }
+        if(gradeOpenTime==null){
+            return "gradeOpenTime";
+        }
+        if(gradeEndTime==null){
+            return "gradeEndTime";
+        }
+        if(gradeType==null){
+            return "gradeType";
+        }
+        return null;
+    }
 }
  
 
