@@ -1,8 +1,8 @@
 /**
  * Copyright (C), 2019-2019, XXX有限公司
- * FileName: HelloController
+ * FileName: InfoController
  * Author:   11580
- * Date:     2019/6/8 0008 20:43
+ * Date:     2019/6/10 0010 15:01
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
@@ -10,26 +10,33 @@
  */
 package com.xbleey.controller;
 
+import com.xbleey.dao.InfoDao;
+import com.xbleey.entity.Info;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * 〈一句话功能简述〉<br> 
  * 〈〉
  *
  * @author 11580
- * @create 2019/6/8 0008
+ * @create 2019/6/10 0010
  * @since 1.0.0
  */
 @Controller
-public class HelloController {
+public class InfoController {
+    @Autowired
+    InfoDao infoDao;
 
-    @ResponseBody
-    @GetMapping(value = "/hello")
-    public String hello(Model model){
-        return "hello";
+    @GetMapping(value = "infos")
+    public String infos(Model model){
+        List<Info> infos = infoDao.findAll();
+        model.addAttribute("infos",infos);
+        return "infos";
     }
 }
  
