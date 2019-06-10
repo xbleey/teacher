@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://getbootstrap.com/docs/4.3/examples/offcanvas/ -->
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>给我们的班主任点赞</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../files/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"
+          rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="../files/offcanvas.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand mr-auto mr-lg-0" href="#">班主任点赞</a>
+    <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="nav-scroller bg-white shadow-sm">
+    <nav class="nav nav-underline">
+        <a class="nav-link active" href="/index">后台主页</a>
+        <a class="nav-link" href="#">
+            同学
+            <span class="badge badge-pill bg-light align-text-bottom">99+</span>
+        </a>
+    </nav>
+</div>
+
+<main role="main" class="container">
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom border-gray pb-2 mb-0">快来给你的班主任留言吧！</h6>
+        <div class="media text-muted pt-3">
+            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                 preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#007bff"></rect>
+                <text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+            </svg>
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <input type="text" class="form-control"  placeholder="请输入班级编号"
+                       name="gradeNumber" style="width:30%"/>
+            </p>
+        </div>
+        <div class="media text-muted pt-3">
+            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                 preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#e83e8c"></rect>
+                <text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text>
+            </svg>
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <input type="text" class="form-control"  placeholder="请输入学生名字"
+                       name="gradeNumber" style="width:30%"/>
+            </p>
+        </div>
+        <div class="media text-muted pt-3">
+            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                 preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#6f42c1"></rect>
+                <text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text>
+            </svg>
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <input type="text" class="form-control"  placeholder="请输入班主任名字"
+                       name="gradeNumber" style="width:30%"/>
+            </p>
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+        <img class="mr-3" src="../images/love.jpg" alt="" width="48" height="48">
+        <div class="lh-100">
+            <h6 class="mb-0 text-white lh-100">给老子点赞👍👍👍</h6>
+            <small>Since 2019-06-10</small>
+        </div>
+    </div>
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-pink rounded shadow-sm">
+        <img class="mr-3" src="../images/dog.jpg" alt="" width="48" height="48">
+        <div class="lh-100">
+            <h6 class="mb-0 text-white lh-100">给爸爸点赞👍👍👍👍👍</h6>
+            <small>Since 2019-06-10</small>
+        </div>
+    </div>
+
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Suggestions</h6>
+        <div class="media text-muted pt-3">
+            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                 preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#007bff"></rect>
+                <text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+            </svg>
+            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <strong class="text-gray-dark">Full Name</strong>
+                    <a href="https://getbootstrap.com/docs/4.3/examples/offcanvas/#">Follow</a>
+                </div>
+                <span class="d-block">@username</span>
+            </div>
+        </div>
+        <div class="media text-muted pt-3">
+            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                 preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#007bff"></rect>
+                <text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+            </svg>
+            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <strong class="text-gray-dark">Full Name</strong>
+                    <a href="https://getbootstrap.com/docs/4.3/examples/offcanvas/#">Follow</a>
+                </div>
+                <span class="d-block">@username</span>
+            </div>
+        </div>
+        <div class="media text-muted pt-3">
+            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                 preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#007bff"></rect>
+                <text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+            </svg>
+            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <strong class="text-gray-dark">Full Name</strong>
+                    <a href="https://getbootstrap.com/docs/4.3/examples/offcanvas/#">Follow</a>
+                </div>
+                <span class="d-block">@username</span>
+            </div>
+        </div>
+        <small class="d-block text-right mt-3">
+            <a href="https://getbootstrap.com/docs/4.3/examples/offcanvas/#">All suggestions</a>
+        </small>
+    </div>
+</main>
+<script src="../files/jquery-3.2.1.slim.min.js" th:href="@{webjars/jquery/3.4.1/jquery.slim.min.js}"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="#" th:href="@{webjars/bootstrap/4.3.1/js/bootstrap.bundle.min.js}"></script>
+<script src="../files/offcanvas.js"></script>
+
+</body>
+</html>

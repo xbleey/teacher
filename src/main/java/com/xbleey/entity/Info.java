@@ -31,18 +31,6 @@ public class Info {
     private String infoMess;
     @Column(name = "info_stu_id")
     private Integer infoStuId;
-    private String stuName;
-    private Integer stuForGradeId;
-    private Long stuPhone;
-
-    public Info() {
-    }
-
-    public void show(Student student) {
-        this.stuName = student.getStuName();
-        this.stuForGradeId = student.getStuForGradeId();
-        this.stuPhone = student.getStuPhone();
-    }
 
     public Integer getInfoId() {
         return infoId;
@@ -68,39 +56,12 @@ public class Info {
         this.infoStuId = infoStuId;
     }
 
-    public String getStuName() {
-        return stuName;
-    }
-
-    public void setStuName(String stuName) {
-        this.stuName = stuName;
-    }
-
-    public Integer getStuForGradeId() {
-        return stuForGradeId;
-    }
-
-    public void setStuForGradeId(Integer stuForGradeId) {
-        this.stuForGradeId = stuForGradeId;
-    }
-
-    public Long getStuPhone() {
-        return stuPhone;
-    }
-
-    public void setStuPhone(Long stuPhone) {
-        this.stuPhone = stuPhone;
-    }
-
     @Override
     public String toString() {
         return "Info{" +
                 "infoId=" + infoId +
                 ", infoMess='" + infoMess + '\'' +
                 ", infoStuId=" + infoStuId +
-                ", stuName='" + stuName + '\'' +
-                ", stuForGradeId=" + stuForGradeId +
-                ", stuPhone=" + stuPhone +
                 '}';
     }
 }
