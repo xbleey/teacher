@@ -35,7 +35,6 @@ public class MyConfig implements WebMvcConfigurer {
         registry.addViewController("/go").setViewName("login");
         registry.addViewController("/").setViewName("forward:/go");
         registry.addViewController("/index").setViewName("index");
-        registry.addViewController("/show").setViewName("show");
     }
 }
  

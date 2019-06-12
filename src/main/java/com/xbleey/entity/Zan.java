@@ -29,8 +29,10 @@ public class Zan {
     private Integer zanId;
     @Column(name = "zan_level")
     private Integer zanLevel;
-    @Column(name = "zan_stu_id",unique = true)
+    @Column(name = "zan_stu_id")
     private Integer zanStuId;
+    @Column(name = "zan_teacher_name")
+    private String zanTeacherName;
 
     public Integer getZanId() {
         return zanId;
@@ -56,12 +58,21 @@ public class Zan {
         this.zanStuId = zanStuId;
     }
 
+    public String getZanTeacherName() {
+        return zanTeacherName;
+    }
+
+    public void setZanTeacherName(String zanTeacherName) {
+        this.zanTeacherName = zanTeacherName;
+    }
+
     @Override
     public String toString() {
         return "Zan{" +
                 "zanId=" + zanId +
                 ", zanLevel=" + zanLevel +
                 ", zanStuId=" + zanStuId +
+                ", zanTeacherName='" + zanTeacherName + '\'' +
                 '}';
     }
 }

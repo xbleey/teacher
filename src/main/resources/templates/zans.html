@@ -95,6 +95,7 @@
                         <th>点赞分数</th>
                         <th>点赞学生姓名</th>
                         <th>点赞学生班号</th>
+                        <th>点赞老师名字</th>
 
                     </tr>
                     </thead>
@@ -104,6 +105,7 @@
                         <td th:text="${zanShow.getZan().getZanLevel()}">getZanLeve</td>
                         <td th:text="${zanShow.getStudent().getStuName()}">getStuName</td>
                         <td th:text="${zanShow.getStudent().getStuForGradeId()}">getStuForGradeId</td>
+                        <td th:text="${zanShow.getZan().getZanTeacherName()}">ZanTeacherName</td>
                     </tr>
                     </tbody>
                 </table>
